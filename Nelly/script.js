@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     document.querySelectorAll('form').forEach(form => {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
 
@@ -32,10 +32,39 @@ document.addEventListener('DOMContentLoaded', () => {
             var dto = "";
             if (formId === 'signup-form') {
                 dto = new SignupDTO(formData);
+                try {
+                    const response = await fetch('http://localhost:8000/api/v1/users', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(dto)
+                    });
+
+                    const result = await response.json();
+                    console.log("Server responded:", result);
+                } catch (error) {
+                    console.error("Connection failed:", error);
+                }
             } else {
-                dto = new LoginDTO(formData);
+                dto = new LoginDTO(formData); try {
+                    const response = await fetch('http://localhost:8000/api/v1/users/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(dto)
+                    });
+
+                    const result = await response.json();
+                    console.log("Server responded:", result);
+                } catch (error) {
+                    console.error("Connection failed:", error);
+                }
+
             }
             alert(`${dto.email}`);
+
         });
     });
 });
