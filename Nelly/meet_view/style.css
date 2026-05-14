@@ -1,0 +1,91 @@
+/*  #84592C 
+    #412718 
+    #E1D3A9 
+    #250101 
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #250101;
+    color: #E1D3A9;
+    font-family: Helvetica;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.meet-card {
+    background-color: #412718;
+    border: 1px solid #E1D3A9;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+    box-shadow: 5px 5px 20px black;
+}
+
+.meet-card:hover {
+    transform: translateY(-5px);
+    background-color: #420109;
+}
+
+.meet-header {
+    border-bottom: 1px solid #E1D3A9;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.meet-header h3 {
+    margin: 0;
+    color: #E1D3A9;
+}
+
+.status-badge {
+    color: #E1D3A9;
+    border: 1px solid #E1D3A9;
+    padding: 3px 10px;
+    margin-left: 10px;
+}
+
+.status-created {
+    background-color: #534831;
+}
+
+.status-pending {
+    background-color: #734F31;
+}
+
+.status-rejected {
+    background-color: #5E2A25;
+}
+
+.status-approved {
+    background-color: #8F7C3A;
+}
+
+.status-canceled {
+    background-color: #371E13;
+}
+
+.participant-box {
+    margin-top: 15px;
+    background-color: #250101;
+    color: #E1D3A9;
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #E1D3A9;
+    text-align: center;
+}
