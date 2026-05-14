@@ -23,6 +23,6 @@ messages.forEach(msg => {
     box.appendChild(user);
     box.appendChild(text);
     div.appendChild(box);
-
-    document.body.appendChild(div);
 });
+
+document.body.appendChild(div);
